@@ -8,11 +8,14 @@ run;
 data _null_;
  rc= gitfn_co_branch(
   "/home/grwhit/branches2_sasdemo",       /*1*/
-  "origin/branch2");         /*2*/
+  "origin/branch1");         /*2*/
   put rc=;
 run;
 
-
+data _null_;
+rc =GIT_INDEX_ADD( "/home/grwhit/branches2_sasdemo", "git functions.sas", "new");
+put rc=;
+run;
 
 data _null_;
  rc = gitfn_commit(                   /*1*/
